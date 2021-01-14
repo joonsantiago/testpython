@@ -47,15 +47,21 @@ def member_api(request):
                 sucess = False
         
         if(sucess):
-            total, expression_decimal = serializerDecimalExpression(valores_base10, operacoes)
-            total_binario = decimalToBinarie(total)
-            
-            resp = {
-                "result": total_binario,
-                "decimalExpression": expression_decimal,
-                "decimalResult": total
-            }
-            data_return["message"] = resp
+            try:
+                total, expression_decimal = serializerDecimalExpression(valores_base10, operacoes)
+                total_binario = decimalToBinarie(total)
+                
+                resp = {
+                    "result": total_binario,
+                    "decimalExpression": expression_decimal,
+                    "decimalResult": total
+                }
+                data_return["message"] = resp
+            except:
+                status_return = status.HTTP_406_NOT_ACCEPTABLE
+                data_return["sucess"] = False
+                data_return["message"] = "An invalid or uninterpretable value was reported."
+                sucess = False
                                         
             
         return Response(data_return, status=status_return)
