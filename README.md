@@ -1,4 +1,4 @@
-# Desafio digistart Software
+# Desafio Python
 
 Foi escolhida a opção 2 **Problmea da operação em binário**, fazendo um WEB REST capaz de operar um expressão de números binários, retornando a resposta também em números binários.
 
@@ -14,13 +14,9 @@ Aceitando-se os seguintes operadores
 
 - (%) porcentagem
 
-
-
 **Requisitos**
 
 - Python
-
-
 
 **Inicialização**
 
@@ -28,13 +24,9 @@ Aceitando-se os seguintes operadores
 
 - Agora basta iniciar a aplicação com o comando `python manage.py runserver`
 
-
-
 **Requisição**
 
 Deve ser realizado uma requisição POST para o endereço http://localhost:8000/api/binarie
-
-
 
 **Request**
 
@@ -43,8 +35,6 @@ Deve ser realizado uma requisição POST para o endereço http://localhost:8000/
 - É necessário a chave do JSON estar nomeada como **expression**
 
 - É necessário informar no mínimo uma operação (dois valores e o sinal da operação entre eles)
-
-
 
 **Exemplo 1**
 
@@ -58,8 +48,6 @@ Deve ser realizado uma requisição POST para o endereço http://localhost:8000/
 { "expression": "110010 + 10100 * 100" }
 ```
 
-
-
 **Response  - Sucesso**
 
 ```json
@@ -72,5 +60,3 @@ Deve ser realizado uma requisição POST para o endereço http://localhost:8000/
     }
 }
 ```
-
-
